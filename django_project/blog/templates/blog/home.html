@@ -1,4 +1,5 @@
 {% extends "blog/base.html" %}
+{% load staticfiles%}
 {% block content %}
 
 <h1 class="mb-3">Total Number of participants ({{ posts|length }})</h1>
@@ -68,7 +69,6 @@
 </div>
 
 {% load calculate_age %}
-{% load staticfiles%}
 {% load json_filters %}
 <loldiv id="myvar" data="{{posts}}"/>
 <script>
@@ -86,6 +86,9 @@
      console.log(datasetGraph);
 </script>
 <script src="{% static 'blog/main.js' %}"></script>
+<script src="{% static 'blog/histogram.js' %}"></script>
+<script src="{% static 'blog/graphbmi.js' %}"></script>
+
    <div id="my_dataviz"></div>
    <div id="bmi">
        <p>this is the fellow</p>
